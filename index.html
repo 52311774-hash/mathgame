@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Mini Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <h1>Math Mini Game</h1>
+    <p class="subtitle">Answer 5 questions correctly to win.</p>
+
+    <section class="status" aria-live="polite">
+      <p><strong>Correct Answers:</strong> <span id="score">0</span> / 5</p>
+    </section>
+
+    <section class="question-area">
+      <h2 id="question">Press Start to begin!</h2>
+    </section>
+
+    <form id="answer-form" class="answer-form" autocomplete="off">
+      <label for="answer-input">Your answer</label>
+      <input id="answer-input" type="number" step="any" required disabled>
+      <button id="submit-btn" type="submit" disabled>Submit</button>
+    </form>
+
+    <div class="actions">
+      <button id="start-btn" type="button">Start Game</button>
+      <button id="restart-btn" type="button" class="hidden">Play Again</button>
+    </div>
+
+    <p id="feedback" class="feedback" aria-live="polite"></p>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

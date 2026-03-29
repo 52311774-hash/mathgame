@@ -1,0 +1,133 @@
+:root {
+  --bg-1: #f7f1e8;
+  --bg-2: #e4efe9;
+  --surface: #ffffffcc;
+  --text: #1d2a34;
+  --accent: #0f766e;
+  --accent-strong: #115e59;
+  --danger: #9f1239;
+  --ring: #14b8a6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top left, var(--bg-2), var(--bg-1));
+  padding: 1rem;
+}
+
+.game-shell {
+  width: min(720px, 100%);
+  background: var(--surface);
+  border: 2px solid #d4ddd7;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.subtitle {
+  margin-top: 0.4rem;
+  color: #30414f;
+}
+
+.status {
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  margin: 1rem 0;
+}
+
+.question-area {
+  min-height: 3rem;
+}
+
+.question-area h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+}
+
+.answer-form {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.answer-form label {
+  font-weight: 600;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+input {
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px #99f6e4;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  color: #ffffff;
+  background: var(--accent);
+  cursor: pointer;
+  transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: var(--accent-strong);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.feedback {
+  margin: 1rem 0 0;
+  min-height: 1.25rem;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .game-shell {
+    padding: 1rem;
+  }
+}
